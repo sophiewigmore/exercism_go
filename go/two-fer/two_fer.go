@@ -13,7 +13,6 @@ func ShareWith(name string) string {
 	} else {
 		txt += name
 	}
-
 	txt += ", one for me."
 	return txt
 }
