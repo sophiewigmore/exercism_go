@@ -10,14 +10,18 @@ import (
 
 // Total returns the total number of grains
 func Total() uint64 {
-	var count uint64
-	var total uint64
+	//var count uint64
+	//var total uint64
 
-	for i := 1; i <= 64; i++ {
-		count, _ = Square(i)
-		total = total + count
-	}
-	return total
+	// for i := 1; i <= 64; i++ {
+	// 	count, _ = Square(i)
+	// 	total = total + count
+	// }
+
+	//return total
+
+	// use bit shifting for total
+	return (1 << 64) - 1
 }
 
 // Square how many grains were on each square
