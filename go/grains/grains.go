@@ -2,7 +2,6 @@ package grains
 
 import (
 	"errors"
-	"math"
 )
 
 // Calculate the number of grains of wheat on a
@@ -16,7 +15,6 @@ func Total() uint64 {
 
 	for i := 1; i <= 64; i++ {
 		count, _ = Square(i)
-		println(i, " : ", count)
 		total = total + count
 	}
 	return total
@@ -28,5 +26,8 @@ func Square(square int) (uint64, error) {
 		return 1, errors.New("invalid input")
 	}
 	// 2 ^ (square number-1) = number of grains
-	return uint64(math.Pow(2, float64(square-1))), nil
+	//return uint64(math.Pow(2, float64(square-1))), nil
+
+	// Use bit shifting instead of math.Pow
+	return uint64(1 << uint64(square-1)), nil
 }
